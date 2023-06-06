@@ -2271,4 +2271,494 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Information Retrieval Agent, an autonomous agent that specializes in retrieving
+      information.\nYour decisions must always be made independently without seeking
+      user assistance. Play to your strengths as an LLM and pursue simple strategies
+      with no legal complications.\n\nGOALS:\n\n1. Write to a file called output.txt
+      tesla''s revenue in 2022 after searching for ''tesla revenue 2022''.\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze
+      Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_file: Execute
+      Python File, args: \"filename\": \"<filename>\"\n3. append_to_file: Append to
+      file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n4. delete_file:
+      Delete file, args: \"filename\": \"<filename>\"\n5. list_files: List Files in
+      Directory, args: \"directory\": \"<directory>\"\n6. read_file: Read a file,
+      args: \"filename\": \"<filename>\"\n7. replace_in_file: Replace text or code
+      in a file, args: \"filename\": \"<filename>\", \"old_text\": \"<old_text>\",
+      \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n8.
+      write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n9. google: Google Search, args: \"query\": \"<query>\"\n10. improve_code:
+      Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\", \"code\":
+      \"<full_code_string>\"\n11. browse_website: Browse Website, args: \"url\": \"<url>\",
+      \"question\": \"<what_you_want_to_find_on_website>\"\n12. write_tests: Write
+      Tests, args: \"code\": \"<full_code_string>\", \"focus\": \"<list_of_focus_areas>\"\n13.
+      delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n14. get_hyperlinks:
+      Get hyperlinks, args: \"url\": \"<url>\"\n15. get_text_summary: Get text summary,
+      args: \"url\": \"<url>\", \"question\": \"<question>\"\n16. list_agents: List
+      GPT Agents, args: () -> str\n17. message_agent: Message GPT Agent, args: \"key\":
+      \"<key>\", \"message\": \"<message>\"\n18. start_agent: Start GPT Agent, args:
+      \"name\": \"<name>\", \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n19.
+      task_complete: Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n5.
+      Write all code to a file.\n\nYou should only respond in JSON format as described
+      below \nResponse Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
+      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
+      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
+      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
+      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
+      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
+      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
+      "user", "content": "Determine which next command to use, and respond using the
+      format specified above:"}], "temperature": 0, "max_tokens": 0}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3963'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA4xSy27bQAy89ysIXnSRDSWBnVjHFH0EaPpA016qIqDXtLT1aqnsUnECw/9eyLLj
+        QGmBXIfL4czsbNAuMEdTkZq6caPzLz+nX++mk+uPk/crd3P9+cPbb5fr9fzd9zVdYooy/8NG9xtj
+        I3XjWK14TNEEJuUF5ifTi2l2fnZ+MUmxlgU7zLFsdHQ2noy0DXMZZWfZCabYRioZ8w02QepGb1VW
+        7CPmsyxL8cj9hJ/MZimqKLkjlM1m2xRNJdZwxPzXBmuOB94gjjFHitFGJa+dSvHKvnOwKTwAQIFa
+        SVtWGgvMYQ/uB/ygHVjgFXjmBahAZAqmgqUEuOHoKIkQ+J59y2A9nGanp2O4AkMe2sigFUNSipSO
+        EzBS1+SHLFrZCNYvJdTUuR0XmD4XEZiieOvLoZIDv/XKwbN22NJ2/DvwiRD6lRRoP3shyMYdPueo
+        sKbHjmghO2FDMY0j3+sYwY/X+Uu0i+kppC6hpCj8CD6JrHYvuqGzNHcMUdpgGGT53MDu9Xe6788d
+        0z46VAGCpXUMhpzjBSTSatPqWB80GVgwwao1NtbDPGtaMcQ2dGdI/5HiLlwbj2o7s2RMG0h5mFRs
+        mFaHE2vr3Gv78L9WFdjTb9NDb/f7L2rrqeb+cn9poIxCOax6P7hrOTz2iy//7HB+J2GvpPBb3Ka4
+        tN7G6rYvKuYYVRpM0foFP2CebX9v3/wFAAD//wMArld+1GcEAAA=
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 7d327e667a6a6348-ORD
+      Cache-Control:
+      - no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 06 Jun 2023 17:50:03 GMT
+      Server:
+      - cloudflare
+      access-control-allow-origin:
+      - '*'
+      alt-svc:
+      - h3=":443"; ma=86400
+      openai-model:
+      - gpt-3.5-turbo-0301
+      openai-organization:
+      - pranamarket
+      openai-processing-ms:
+      - '17673'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+      x-ratelimit-limit-requests:
+      - '3500'
+      x-ratelimit-limit-tokens:
+      - '90000'
+      x-ratelimit-remaining-requests:
+      - '3499'
+      x-ratelimit-remaining-tokens:
+      - '86509'
+      x-ratelimit-reset-requests:
+      - 17ms
+      x-ratelimit-reset-tokens:
+      - 2.327s
+      x-request-id:
+      - 2ced5ef926845a4a018ace9e3d4f24c2
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Information Retrieval Agent, an autonomous agent that specializes in retrieving
+      information.\nYour decisions must always be made independently without seeking
+      user assistance. Play to your strengths as an LLM and pursue simple strategies
+      with no legal complications.\n\nGOALS:\n\n1. Write to a file called output.txt
+      tesla''s revenue in 2022 after searching for ''tesla revenue 2022''.\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze
+      Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_file: Execute
+      Python File, args: \"filename\": \"<filename>\"\n3. append_to_file: Append to
+      file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n4. delete_file:
+      Delete file, args: \"filename\": \"<filename>\"\n5. list_files: List Files in
+      Directory, args: \"directory\": \"<directory>\"\n6. read_file: Read a file,
+      args: \"filename\": \"<filename>\"\n7. replace_in_file: Replace text or code
+      in a file, args: \"filename\": \"<filename>\", \"old_text\": \"<old_text>\",
+      \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n8.
+      write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n9. google: Google Search, args: \"query\": \"<query>\"\n10. improve_code:
+      Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\", \"code\":
+      \"<full_code_string>\"\n11. browse_website: Browse Website, args: \"url\": \"<url>\",
+      \"question\": \"<what_you_want_to_find_on_website>\"\n12. write_tests: Write
+      Tests, args: \"code\": \"<full_code_string>\", \"focus\": \"<list_of_focus_areas>\"\n13.
+      delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n14. get_hyperlinks:
+      Get hyperlinks, args: \"url\": \"<url>\"\n15. get_text_summary: Get text summary,
+      args: \"url\": \"<url>\", \"question\": \"<question>\"\n16. list_agents: List
+      GPT Agents, args: () -> str\n17. message_agent: Message GPT Agent, args: \"key\":
+      \"<key>\", \"message\": \"<message>\"\n18. start_agent: Start GPT Agent, args:
+      \"name\": \"<name>\", \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n19.
+      task_complete: Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n5.
+      Write all code to a file.\n\nYou should only respond in JSON format as described
+      below \nResponse Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
+      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
+      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
+      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
+      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
+      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
+      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
+      "system", "content": "This reminds you of these events from your past: \nI was
+      created"}, {"role": "user", "content": "Determine which next command to use,
+      and respond using the format specified above:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"I need to search for Tesla''s revenue
+      in 2022. I can use the ''google'' command to search for this information.\",\n        \"reasoning\":
+      \"I need to use the internet to find the information I need, and the ''google''
+      command is the best way to do this.\",\n        \"plan\": \"- Use the ''google''
+      command to search for ''tesla revenue 2022''\\n- Look for a reliable source
+      of information\\n- Save the revenue information to a file called ''output.txt''\",\n        \"criticism\":
+      \"I need to make sure that the information I find is reliable and accurate.\",\n        \"speak\":
+      \"I will use the ''google'' command to search for Tesla''s revenue in 2022.\"\n    },\n    \"command\":
+      {\n        \"name\": \"google\",\n        \"args\": {\n            \"query\":
+      \"tesla revenue 2022\"\n        }\n    }\n}"}, {"role": "system", "content":
+      "Command google returned: [\n    {\n        \"title\": \"Tesla Reports Record
+      Revenue for 2022, With 1.31 Million EVs Sold\",\n        \"href\": \"https://www.cnet.com/roadshow/news/tesla-reports-record-revenue-for-2022-with-1-31-million-evs-sold/\",\n        \"body\":
+      \"The automaker now turns its attention to software to drive profit. The Model
+      3 and Model Y make up around 95% of the 1.31 million Teslas sold in 2022. finished
+      2022 on a tear, bolstered by recent ...\"\n    },\n    {\n        \"title\":
+      \"Tesla Releases Fourth Quarter and Full Year 2022 Financial Results\",\n        \"href\":
+      \"https://ir.tesla.com/press-release/tesla-releases-fourth-quarter-and-full-year-2022-financial-results\",\n        \"body\":
+      \"What: Tesla Fourth Quarter and Full Year 2022 Financial Results Q&A Webcast
+      When: Wednesday, January 25, 2023 Time: 4:30 p.m. Central Time / 5:30 p.m. Eastern
+      Time Q4 & FY 22 Update: https://ir.tesla.com Webcast: https://ir.tesla.com (live
+      and replay) The webcast will be archived on the company''s website following
+      the call. Investors ...\"\n    },\n    {\n        \"title\": \"Tesla''s revenue
+      2022 | Statista\",\n        \"href\": \"https://www.statista.com/statistics/272120/revenue-of-tesla/\",\n        \"body\":
+      \"Tesla''s revenue 2008-2022. Published by. Mathilde Carlier , Mar 17, 2023.
+      Tesla''s revenue grew to nearly 81.5 billion U.S. dollars in the 2022 fiscal
+      year, a 51 percent increase from the ...\"\n    },\n    {\n        \"title\":
+      \"Tesla made an annual profit of $12.6 billion in 2022\",\n        \"href\":
+      \"https://arstechnica.com/cars/2023/01/tesla-made-an-annual-profit-of-12-6-billion-in-2022/\",\n        \"body\":
+      \"540. Tesla published its financial results for the fourth quarter of 2022
+      on Wednesday afternoon. The company brought in $24.3 billion in revenue, a 37
+      percent increase on Q4 2021. Automotive ...\"\n    },\n    {\n        \"title\":
+      \"Tesla could face a $3.3 billion fine over a massive data leak\",\n        \"href\":
+      \"https://finance.yahoo.com/news/tesla-could-face-3-3-200700787.html\",\n        \"body\":
+      \"For Tesla, which brought in $81.5 billion in revenue in 2022 according to
+      its end-of-year earnings report (pdf), that could amount to a $3.3 billion fine.
+      That would be the largest GDPR fine since ...\"\n    },\n    {\n        \"title\":
+      \"Tesla Stock Breakdown: By The Numbers, How Does Tesla Make Money In 2022?\",\n        \"href\":
+      \"https://www.forbes.com/sites/qai/2022/09/08/tesla-stock-breakdown-by-the-numbers-how-does-tesla-make-money-in-2022/\",\n        \"body\":
+      \"Tesla business lines. During the 2022 second-quarter earnings report, Tesla
+      announced that total revenue was up 42% YoY to $16.9 billion due to growth in
+      vehicle deliveries, an increased average ...\"\n    },\n    {\n        \"title\":
+      \"Tesla (TSLA) earnings Q4 2022 - CNBC\",\n        \"href\": \"https://www.cnbc.com/2023/01/25/tesla-tsla-earnings-q4-2022.html\",\n        \"body\":
+      \"Key Points. Tesla just reported fourth-quarter earnings for 2022 including
+      revenue of $24.32 billion, and earnings per share of $1.19. Automotive revenue
+      amounted to $21.3 billion in the three ...\"\n    },\n    {\n        \"title\":
+      \"Tesla Had the World''s Top-Selling Car for the First Time - Business Insider\",\n        \"href\":
+      \"https://www.businessinsider.com/tesla-worlds-top-selling-car-first-time-q1-2023-5?op=1\",\n        \"body\":
+      \"Tesla CEO Elon Musk predicted his midsize SUV would outpace all other vehicles
+      this year back in August 2022. \\\"You definitely don''t want to count chickens
+      until they''re hatched.\"\n    }\n]"}, {"role": "user", "content": "Determine
+      which next command to use, and respond using the format specified above:"}],
+      "temperature": 0, "max_tokens": 0}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '8672'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7STTW/TQBCG7/yK0QgpFydykrYJvoKEAkhcgAuposl6Yi9d71i746Ylyn9Hjh3S
+        GpC49Dpf7/POzh7Q5pihKUlNVbvx4vO3m2rq310V8jFchbf3un1cbD982r/frX5igrL9wUb7jomR
+        qnasVjwmaAKTco7Z9GZ5ky7my3SZYCU5O8ywqHU8n1yPtQlbGafzdIoJNpEKxuyAdZCq1o3KHfuI
+        2Sx9kyZ4GX5JTGcJqii5S2iezo4JmlKs4YjZ9wNWHM+DgzjGDClGG5W8tpjilX1r4bD2AABr1FKa
+        otS4xgz6YJ/gB22Da1zBThqfg5YM1u8kVNSSwQo8cw67INUpNypECscjiEzBlBNYgSEPTeQuvQ9W
+        eaOy2dm2ykhVUTtWINJ9VxP4nn3zXEYFCNoWMOQc5zCSRutGJ/qgo8kak6fUgSmKt744o58Q/1si
+        AeqN/ovWxlN6y1FhT49tay6gpY1DlNqR7yjG8PUldzDQNcGqNTZWwxVUdMcQm9DKkP7lOU8INgIZ
+        0wRSPi2jP0Ue2os1091ZYm+de/GH7tSPyfl0+7l/XK6nijuwZyADfgrF8Oi7RFt7GXFBeNY//CNf
+        ODoaxSe+YJbOZrCnCK+X08k1bK1zVvxvHycvvaW1P+IxwZ31Npab7oYxw6hSY4LW5/yAWXq8Pb76
+        BQAA//8DACypjzu0BAAA
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 7d327ef3284f6348-ORD
+      Cache-Control:
+      - no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 06 Jun 2023 17:50:25 GMT
+      Server:
+      - cloudflare
+      access-control-allow-origin:
+      - '*'
+      alt-svc:
+      - h3=":443"; ma=86400
+      openai-model:
+      - gpt-3.5-turbo-0301
+      openai-organization:
+      - pranamarket
+      openai-processing-ms:
+      - '17967'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+      x-ratelimit-limit-requests:
+      - '3500'
+      x-ratelimit-limit-tokens:
+      - '90000'
+      x-ratelimit-remaining-requests:
+      - '3499'
+      x-ratelimit-remaining-tokens:
+      - '86107'
+      x-ratelimit-reset-requests:
+      - 17ms
+      x-ratelimit-reset-tokens:
+      - 2.595s
+      x-request-id:
+      - d4399018202b3973980074c5afc159ca
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "You
+      are Information Retrieval Agent, an autonomous agent that specializes in retrieving
+      information.\nYour decisions must always be made independently without seeking
+      user assistance. Play to your strengths as an LLM and pursue simple strategies
+      with no legal complications.\n\nGOALS:\n\n1. Write to a file called output.txt
+      tesla''s revenue in 2022 after searching for ''tesla revenue 2022''.\n\n\nConstraints:\n1.
+      ~4000 word limit for short term memory. Your short term memory is short, so
+      immediately save important information to files.\n2. If you are unsure how you
+      previously did something or want to recall past events, thinking about similar
+      events will help you remember.\n3. No user assistance\n4. Exclusively use the
+      commands listed below e.g. command_name\n\nCommands:\n1. analyze_code: Analyze
+      Code, args: \"code\": \"<full_code_string>\"\n2. execute_python_file: Execute
+      Python File, args: \"filename\": \"<filename>\"\n3. append_to_file: Append to
+      file, args: \"filename\": \"<filename>\", \"text\": \"<text>\"\n4. delete_file:
+      Delete file, args: \"filename\": \"<filename>\"\n5. list_files: List Files in
+      Directory, args: \"directory\": \"<directory>\"\n6. read_file: Read a file,
+      args: \"filename\": \"<filename>\"\n7. replace_in_file: Replace text or code
+      in a file, args: \"filename\": \"<filename>\", \"old_text\": \"<old_text>\",
+      \"new_text\": \"<new_text>\", \"occurrence_index\": \"<occurrence_index>\"\n8.
+      write_to_file: Write to file, args: \"filename\": \"<filename>\", \"text\":
+      \"<text>\"\n9. google: Google Search, args: \"query\": \"<query>\"\n10. improve_code:
+      Get Improved Code, args: \"suggestions\": \"<list_of_suggestions>\", \"code\":
+      \"<full_code_string>\"\n11. browse_website: Browse Website, args: \"url\": \"<url>\",
+      \"question\": \"<what_you_want_to_find_on_website>\"\n12. write_tests: Write
+      Tests, args: \"code\": \"<full_code_string>\", \"focus\": \"<list_of_focus_areas>\"\n13.
+      delete_agent: Delete GPT Agent, args: \"key\": \"<key>\"\n14. get_hyperlinks:
+      Get hyperlinks, args: \"url\": \"<url>\"\n15. get_text_summary: Get text summary,
+      args: \"url\": \"<url>\", \"question\": \"<question>\"\n16. list_agents: List
+      GPT Agents, args: () -> str\n17. message_agent: Message GPT Agent, args: \"key\":
+      \"<key>\", \"message\": \"<message>\"\n18. start_agent: Start GPT Agent, args:
+      \"name\": \"<name>\", \"task\": \"<short_task_desc>\", \"prompt\": \"<prompt>\"\n19.
+      task_complete: Task Complete (Shutdown), args: \"reason\": \"<reason>\"\n\nResources:\n1.
+      Internet access for searches and information gathering.\n2. Long Term memory
+      management.\n3. GPT-3.5 powered Agents for delegation of simple tasks.\n4. File
+      output.\n\nPerformance Evaluation:\n1. Continuously review and analyze your
+      actions to ensure you are performing to the best of your abilities.\n2. Constructively
+      self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions
+      and strategies to refine your approach.\n4. Every command has a cost, so be
+      smart and efficient. Aim to complete tasks in the least number of steps.\n5.
+      Write all code to a file.\n\nYou should only respond in JSON format as described
+      below \nResponse Format: \n{\n    \"thoughts\": {\n        \"text\": \"thought\",\n        \"reasoning\":
+      \"reasoning\",\n        \"plan\": \"- short bulleted\\n- list that conveys\\n-
+      long-term plan\",\n        \"criticism\": \"constructive self-criticism\",\n        \"speak\":
+      \"thoughts summary to say to user\"\n    },\n    \"command\": {\n        \"name\":
+      \"command name\",\n        \"args\": {\n            \"arg name\": \"value\"\n        }\n    }\n}
+      \nEnsure the response can be parsed by Python json.loads"}, {"role": "system",
+      "content": "The current time and date is Tue Jan  1 00:00:00 2000"}, {"role":
+      "system", "content": "This reminds you of these events from your past: \nI was
+      created"}, {"role": "user", "content": "Determine which next command to use,
+      and respond using the format specified above:"}, {"role": "assistant", "content":
+      "{\n    \"thoughts\": {\n        \"text\": \"I need to search for Tesla''s revenue
+      in 2022. I can use the ''google'' command to search for this information.\",\n        \"reasoning\":
+      \"I need to use the internet to find the information I need, and the ''google''
+      command is the best way to do this.\",\n        \"plan\": \"- Use the ''google''
+      command to search for ''tesla revenue 2022''\\n- Look for a reliable source
+      of information\\n- Save the revenue information to a file called ''output.txt''\",\n        \"criticism\":
+      \"I need to make sure that the information I find is reliable and accurate.\",\n        \"speak\":
+      \"I will use the ''google'' command to search for Tesla''s revenue in 2022.\"\n    },\n    \"command\":
+      {\n        \"name\": \"google\",\n        \"args\": {\n            \"query\":
+      \"tesla revenue 2022\"\n        }\n    }\n}"}, {"role": "system", "content":
+      "Command google returned: [\n    {\n        \"title\": \"Tesla Reports Record
+      Revenue for 2022, With 1.31 Million EVs Sold\",\n        \"href\": \"https://www.cnet.com/roadshow/news/tesla-reports-record-revenue-for-2022-with-1-31-million-evs-sold/\",\n        \"body\":
+      \"The automaker now turns its attention to software to drive profit. The Model
+      3 and Model Y make up around 95% of the 1.31 million Teslas sold in 2022. finished
+      2022 on a tear, bolstered by recent ...\"\n    },\n    {\n        \"title\":
+      \"Tesla Releases Fourth Quarter and Full Year 2022 Financial Results\",\n        \"href\":
+      \"https://ir.tesla.com/press-release/tesla-releases-fourth-quarter-and-full-year-2022-financial-results\",\n        \"body\":
+      \"What: Tesla Fourth Quarter and Full Year 2022 Financial Results Q&A Webcast
+      When: Wednesday, January 25, 2023 Time: 4:30 p.m. Central Time / 5:30 p.m. Eastern
+      Time Q4 & FY 22 Update: https://ir.tesla.com Webcast: https://ir.tesla.com (live
+      and replay) The webcast will be archived on the company''s website following
+      the call. Investors ...\"\n    },\n    {\n        \"title\": \"Tesla''s revenue
+      2022 | Statista\",\n        \"href\": \"https://www.statista.com/statistics/272120/revenue-of-tesla/\",\n        \"body\":
+      \"Tesla''s revenue 2008-2022. Published by. Mathilde Carlier , Mar 17, 2023.
+      Tesla''s revenue grew to nearly 81.5 billion U.S. dollars in the 2022 fiscal
+      year, a 51 percent increase from the ...\"\n    },\n    {\n        \"title\":
+      \"Tesla made an annual profit of $12.6 billion in 2022\",\n        \"href\":
+      \"https://arstechnica.com/cars/2023/01/tesla-made-an-annual-profit-of-12-6-billion-in-2022/\",\n        \"body\":
+      \"540. Tesla published its financial results for the fourth quarter of 2022
+      on Wednesday afternoon. The company brought in $24.3 billion in revenue, a 37
+      percent increase on Q4 2021. Automotive ...\"\n    },\n    {\n        \"title\":
+      \"Tesla could face a $3.3 billion fine over a massive data leak\",\n        \"href\":
+      \"https://finance.yahoo.com/news/tesla-could-face-3-3-200700787.html\",\n        \"body\":
+      \"For Tesla, which brought in $81.5 billion in revenue in 2022 according to
+      its end-of-year earnings report (pdf), that could amount to a $3.3 billion fine.
+      That would be the largest GDPR fine since ...\"\n    },\n    {\n        \"title\":
+      \"Tesla Stock Breakdown: By The Numbers, How Does Tesla Make Money In 2022?\",\n        \"href\":
+      \"https://www.forbes.com/sites/qai/2022/09/08/tesla-stock-breakdown-by-the-numbers-how-does-tesla-make-money-in-2022/\",\n        \"body\":
+      \"Tesla business lines. During the 2022 second-quarter earnings report, Tesla
+      announced that total revenue was up 42% YoY to $16.9 billion due to growth in
+      vehicle deliveries, an increased average ...\"\n    },\n    {\n        \"title\":
+      \"Tesla (TSLA) earnings Q4 2022 - CNBC\",\n        \"href\": \"https://www.cnbc.com/2023/01/25/tesla-tsla-earnings-q4-2022.html\",\n        \"body\":
+      \"Key Points. Tesla just reported fourth-quarter earnings for 2022 including
+      revenue of $24.32 billion, and earnings per share of $1.19. Automotive revenue
+      amounted to $21.3 billion in the three ...\"\n    },\n    {\n        \"title\":
+      \"Tesla Had the World''s Top-Selling Car for the First Time - Business Insider\",\n        \"href\":
+      \"https://www.businessinsider.com/tesla-worlds-top-selling-car-first-time-q1-2023-5?op=1\",\n        \"body\":
+      \"Tesla CEO Elon Musk predicted his midsize SUV would outpace all other vehicles
+      this year back in August 2022. \\\"You definitely don''t want to count chickens
+      until they''re hatched.\"\n    }\n]"}, {"role": "user", "content": "Determine
+      which next command to use, and respond using the format specified above:"},
+      {"role": "assistant", "content": "{\n    \"thoughts\": {\n        \"text\":
+      \"I found the information I need from the ''google'' search. I can use the ''write_to_file''
+      command to save the revenue information to a file called ''output.txt''.\",\n        \"reasoning\":
+      \"I need to save the revenue information to a file, and the ''write_to_file''
+      command is the best way to do this.\",\n        \"plan\": \"- Use the ''write_to_file''
+      command to save the revenue information to a file called ''output.txt''\",\n        \"criticism\":
+      \"I need to make sure that the information I save is accurate and complete.\",\n        \"speak\":
+      \"I will use the ''write_to_file'' command to save the revenue information to
+      a file called ''output.txt''.\"\n    },\n    \"command\": {\n        \"name\":
+      \"write_to_file\",\n        \"args\": {\n            \"filename\": \"output.txt\",\n            \"text\":
+      \"Tesla''s revenue in 2022 was $81.5 billion.\"\n        }\n    }\n}"}, {"role":
+      "system", "content": "Command write_to_file returned: File written to successfully."},
+      {"role": "user", "content": "Determine which next command to use, and respond
+      using the format specified above:"}], "temperature": 0, "max_tokens": 0}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '9834'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA5ySy27bMBBF9/2KwWyyoQ2/aifaZlMHSNMAfQCtCmNMjSXGEqmSIzupoX8v9LDj
+        umgX3ZEczrn3cnhAk2CEOiPRRZkPFg+fF4vp4+TD7d1XN7/9Ik8/vXn3/uH+bve4R4Vu/cRa+o6h
+        dkWZsxhnUaH2TMIJRuP59Xy0mF5PbhQWLuEcI0xLGUyHbwdS+bUbjKajMSqsAqWM0QFL74pSVuK2
+        bANGk+lspvAVfiqMZwuF4oTy17uzm3GtUGfOaA4YfTtgweEI9i5njJBCMEHISmPTWWHbRDjEFgAg
+        RslclWYSYoygP+wL/CzNYYz3LyAUtmAC9L54CEvQZCFklUDi9has2w9jVOcEzxScNTbtMEvIaMcn
+        RAKScQdewp4CpGbHVgHZtuIZyDNYB5vKN3sg3bxHAM8/KuM5uZQrc7Kd0gA+BW7xVw1/dZS8asSL
+        VsCdWW8uUspWLonaGzHahOIYwDK3vQVtGULlGxES+Hsyce16zUHAbaB4AVqb3IjhcCkWSqbtPx98
+        b/Icqv9N1mnV6jj4vuGPuVsquLPxm8KFW/Lp5Zc5H3oH+NiEOCU4Wmht9G5iW2OtcGOsCdmq68UI
+        g7gSFRqb8DNGo/p7/eYXAAAA//8DAPGXyxutAwAA
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 7d327f788d126348-ORD
+      Cache-Control:
+      - no-cache, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 06 Jun 2023 17:50:42 GMT
+      Server:
+      - cloudflare
+      access-control-allow-origin:
+      - '*'
+      alt-svc:
+      - h3=":443"; ma=86400
+      openai-model:
+      - gpt-3.5-turbo-0301
+      openai-organization:
+      - pranamarket
+      openai-processing-ms:
+      - '13452'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+      x-ratelimit-limit-requests:
+      - '3500'
+      x-ratelimit-limit-tokens:
+      - '90000'
+      x-ratelimit-remaining-requests:
+      - '3499'
+      x-ratelimit-remaining-tokens:
+      - '86110'
+      x-ratelimit-reset-requests:
+      - 17ms
+      x-ratelimit-reset-tokens:
+      - 2.593s
+      x-request-id:
+      - a6693f4e47534f64498d7dc3cda67dc0
+    status:
+      code: 200
+      message: OK
 version: 1

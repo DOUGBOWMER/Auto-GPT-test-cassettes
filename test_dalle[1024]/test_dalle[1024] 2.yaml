@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: '{"prompt": "astronaut riding a horse", "n": 1, "size": "1024x1024", "response_format":
+      "b64_json"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '98'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://api.openai.com/v1/images/generations
+  response:
+    body:
+      string: "{\n  \"error\": {\n    \"code\": \"invalid_api_key\",\n    \"message\":
+        \"Incorrect API key provided: sk-dummy. You can find your API key at https://platform.openai.com/account/api-keys.\",\n
+        \   \"param\": null,\n    \"type\": \"invalid_request_error\"\n  }\n}\n"
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 7d324442fd541265-ORD
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '238'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 06 Jun 2023 17:10:04 GMT
+      Server:
+      - cloudflare
+      access-control-allow-origin:
+      - '*'
+      alt-svc:
+      - h3=":443"; ma=86400
+      openai-processing-ms:
+      - '41'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+      www-authenticate:
+      - Basic realm="OpenAI API"
+      x-request-id:
+      - 3f95936d76a4304002be1d97ea03db3f
+    status:
+      code: 401
+      message: Unauthorized
+version: 1
